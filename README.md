@@ -35,6 +35,8 @@ cd your-repo
 
 - Open `ProductCatalog/src/main/resources/application.properties`.
 - Modify the following properties according to your Elasticsearch configuration:
+
+
   elasticsearch.hostname=localhost
   elasticsearch.port=9200
   elasticsearch.username=elastic
@@ -46,14 +48,16 @@ cd your-repo
 
 
 - Open the docker-compose.yaml file in a text editor.
+
 Find the MYSQL_ROOT_PASSWORD environment variable under the mysql service section and replace your_password with your desired password for the MySQL root user.
 Find the ELASTICSEARCH_PASSWORD environment variable under the elasticsearch service section and replace it with your desired password for Elasticsearch.
+
+
 - Save the changes to the docker-compose.yaml file.
 - Update the application.properties file:
 
 5. Open a terminal or command prompt.
 Navigate to the project directory.
-
 
 Run the following command to build the Docker image for only running the Spring Java service:
 ```
