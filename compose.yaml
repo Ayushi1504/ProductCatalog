@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+    volumes:
+      - ./ProductCatalog/src/main/resources/product_catalog_mapping.json:/usr/share/elasticsearch/product_catalog_mapping.json
+  mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=your_password
+      - MYSQL_DATABASE=your_database
+    volumes:
+      - ./ProductCatalog/src/main/resources/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+    ports:
+      - 3306:3306
+
+  spring-service:
+    build:
+      context: ./spring-service
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
