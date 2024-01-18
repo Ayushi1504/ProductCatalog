@@ -50,6 +50,8 @@ cd your-repo
 - Open the docker-compose.yaml file in a text editor.
 
 Find the MYSQL_ROOT_PASSWORD environment variable under the mysql service section and replace your_password with your desired password for the MySQL root user.
+
+
 Find the ELASTICSEARCH_PASSWORD environment variable under the elasticsearch service section and replace it with your desired password for Elasticsearch.
 
 
